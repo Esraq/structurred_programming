@@ -1,31 +1,33 @@
-#include <stdio.h>
+#include<stdio.h>
+
 int main()
 {
-   int array[100], position, c, n;
-
-   printf("Enter number of elements in array\n");
-   scanf("%d", &n);
-
-   printf("Enter %d elements\n", n);
-
-   for (c = 0; c < n; c++)
-      scanf("%d", &array[c]);
-
-   printf("Enter the location where you wish to delete element\n");
-   scanf("%d", &position);
-
-   if (position >= n+1)
-      printf("Deletion not possible.\n");
-   else
-   {
-      for (c = position - 1; c < n - 1; c++)
-         array[c] = array[c+1];
-
-      printf("Resultant array:\n");
-
-      for (c = 0; c < n - 1; c++)
-         printf("%d\n", array[c]);
-   }
-
-   return 0;
+    int a[100]={10,20,30,40,50,60,70,80,90},i,size=10,pos,value;
+    
+    printf("Array before insertion\n");
+    for(i=0;i<9;i++)
+    {
+    	
+    	printf("%d\t",a[i]);
+	}
+    
+    printf("\n");
+    
+    
+    printf("Enter the position to be deleted ");
+    scanf("%d",&pos);
+    for(i=pos-1;i<=size-2;i++){
+    	
+    	a[i]=a[i+1];
+    	
+	}
+    a[size-1]=0;
+    
+    for(i=0;i<size-2;i++){
+    	
+    	printf("%d\t",a[i]);
+	}
+  
+    
+    return 0;
 }
