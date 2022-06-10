@@ -1,36 +1,45 @@
-#include <stdio.h>
+#include<stdio.h>
 
 int main()
 {
-    int array[50], position, c, n, value;
+    int a[100]={10,20,30,40,50,60,70,80,90},i,size=9,pos,value;
     
-    printf("Enter number of elements in the array\n");
-    scanf("%d", &n);
+    printf("Array before insertion\n");
+    for(i=0;i<9;i++)
+    {
+    	
+    	printf("%d\t",a[i]);
+	}
     
-    printf("Enter %d elements\n", n);
     
-    for (c = 0; c < n; c++)  {
-	
-        scanf("%d", &array[c]);
-        
-    }
     
-    printf("Please enter the location where you want to insert an new element\n");
-    scanf("%d", &position);
+    printf("\n");
     
-    printf("Please enter the value\n");
-    scanf("%d", &value);
     
-    for (c = n - 1; c >= position - 1; c--)    
-        array[c+1] = array[c];
     
-    array[position-1] = value;
+    printf("Which Position? ");
+    scanf("%d",&pos);
+    printf("Enter the value");
+    scanf("%d",&value);
+   
     
-    printf("Resultant array is\n");
     
-    for (c = 0; c <= n; c++)    
-        printf("%d\n", array[c]);
-		    
-    ////https://www.w3schools.in/c-programming/examples/insert-element-in-array
+    
+    
+    for(i=size;i>=pos;i--)
+    {
+    	
+    	a[i]=a[i-1];
+	}
+    
+    a[pos-1]=value;
+    
+    printf("Array after insertion");
+    
+    for(i=0;i<size+1;i++){
+    	
+    	printf("%d\t",a[i]);
+	}
+    
     return 0;
 }
